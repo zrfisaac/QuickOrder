@@ -1,0 +1,38 @@
+# [ zrfisaac ]
+
+# [ about ]
+# - author : Isaac Caires
+# . - email : zrfisaac@gmail.com
+# . - site : zrfisaac.github.io
+
+# [ gitignore ]
+.vs
+__history
+bin
+obj
+
+
+# : - delphi12
+*.~*
+*.exe
+*.bpi
+*.bpl
+*.dcp
+*.dcu
+*.dll
+*.local
+*.identcache
+*.ini
+*.rsm
+__history/
+__recovery/
+
+# : - zrfisaac
+*.Identifier
+*.classified.*
+.DS_Store
+.git
+*.private.*
+.temp
+.vs
+_*
