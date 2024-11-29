@@ -16,34 +16,34 @@ object DataMain: TDataMain
     Connection = fdConDatabase
     Transaction = fdTraDatabase
     UpdateTransaction = fdTraDatabase
-    Left = 416
+    Left = 528
     Top = 24
   end
   object fdUpdProduct: TFDUpdateSQL
     Connection = fdConDatabase
-    Left = 416
+    Left = 528
     Top = 96
   end
   object dtsProduct: TDataSource
     DataSet = fdTabProduct
-    Left = 416
+    Left = 528
     Top = 312
   end
   object fdTabClient: TFDTable
     Connection = fdConDatabase
     Transaction = fdTraDatabase
     UpdateTransaction = fdTraDatabase
-    Left = 280
+    Left = 392
     Top = 24
   end
   object fdUpdClient: TFDUpdateSQL
     Connection = fdConDatabase
-    Left = 280
+    Left = 392
     Top = 96
   end
   object dtsClient: TDataSource
     DataSet = fdTabClient
-    Left = 280
+    Left = 392
     Top = 312
   end
   object exConDatabase: TSQLConnection
@@ -55,35 +55,43 @@ object DataMain: TDataMain
     Top = 240
   end
   object adTabClient: TADOTable
-    Left = 280
+    Left = 392
     Top = 240
   end
   object adUpdProduct: TADOTable
-    Left = 416
+    Left = 528
     Top = 240
   end
   object exTabClient: TSQLTable
-    Left = 280
+    Left = 392
     Top = 168
   end
   object adTabProduct: TSQLTable
-    Left = 416
+    Left = 528
     Top = 168
   end
   object fdQuery: TFDQuery
     Connection = fdConDatabase
-    Left = 168
+    Left = 280
     Top = 24
   end
   object exQuery: TSQLQuery
     Params = <>
-    Left = 168
+    Left = 280
     Top = 168
   end
   object adQuery: TADOQuery
     Connection = adConDatabase
     Parameters = <>
-    Left = 168
+    Left = 280
     Top = 240
+  end
+  object fdLkMysql: TFDPhysMySQLDriverLink
+    Left = 168
+    Top = 24
+  end
+  object fdLkSqlite: TFDPhysSQLiteDriverLink
+    Left = 168
+    Top = 96
   end
 end

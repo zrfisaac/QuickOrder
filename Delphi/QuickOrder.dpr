@@ -18,7 +18,8 @@ uses
   uMenuMain in 'Sources\uMenuMain.pas' {MenuMain},
   uDataMain in 'Sources\uDataMain.pas' {DataMain: TDataModule},
   uMenuAbout in 'Sources\uMenuAbout.pas' {frmMenuAbout},
-  uModelRoutine in 'Sources\uModelRoutine.pas' {ModelRoutine};
+  uModelRoutine in 'Sources\uModelRoutine.pas' {ModelRoutine},
+  uUnitHelp in 'Sources\uUnitHelp.pas';
 
 {$R *.res}
 

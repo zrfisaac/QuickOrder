@@ -14,6 +14,7 @@ uses
   // Delphi
   System.SysUtils,
   System.Classes,
+  Vcl.Dialogs,
   FireDAC.Stan.Intf,
   FireDAC.Stan.Option,
   FireDAC.Stan.Error,
@@ -38,12 +39,15 @@ uses
   FireDAC.Phys.MSSQLMeta,
   Data.FMTBcd,
   Data.SqlExpr,
-  Data.Win.ADODB;
+  Data.Win.ADODB,
+  FireDAC.Phys.MySQLDef,
+  FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat,
+  FireDAC.Phys.SQLiteDef,
+  FireDAC.Phys.SQLite,
+  FireDAC.Phys.MySQL;
 
 type
-  TFDPhysODBCDriverLink = class(TFDPhysODBCBaseDriverLink);
-
-
   TDataMain = class(TDataModule)
     fdTraDatabase: TFDTransaction;
     fdConDatabase: TFDConnection;
@@ -62,15 +66,14 @@ type
     fdQuery: TFDQuery;
     exQuery: TSQLQuery;
     adQuery: TADOQuery;
+    fdLkMysql: TFDPhysMySQLDriverLink;
+    fdLkSqlite: TFDPhysSQLiteDriverLink;
   public
     procedure Debug;
   end;
 
 var
   DataMain: TDataMain;
-
-var
-  ODBCDriverLink: TFDPhysODBCDriverLink;
 
 implementation
 
@@ -82,25 +85,132 @@ implementation
 
 procedure TDataMain.Debug;
 begin
-   {
-  with (Self.conDatabase) do
-  begin
-    ODBCDriverLink := TFDPhysODBCDriverLink.Create(Application);
-    ODBCDriverLink.DriverID := 'MSSQL'; // Set the driver to MSSQL
-    ODBCDriverLink.ODBCDriver := 'ODBC Driver 17 for SQL Server'; // Specify the ODBC driver for SQL Server
-    ODBCDriverLink.ODBCAdvanced := 'CLOC=en_US.CP1252;DLOC=en_US.819'; // Optional, configure locale settings
-    Close;
-    Params.Values['DriverID'] := 'MSSQL';
-    Params.Values['ODBCDriver'] := 'ODBC Driver 17 for SQL Server';
-    Params.Values['ODBCAdvanced'] := '';
-    Params.Values['Server'] := '127.0.0.1';
-    Params.Values['Database'] := 'master';
-    Params.Values['User_Name'] := 'sa';
-    Params.Values['Password'] := 'Maker@123';
-    Open;
-    ODBCDriverLink.Free;
+  // https://www.connectionstrings.com/sql-server/
+
+  // dbExpress
+   (*
+  try
+    with (Self.exConDatabase) do
+    begin
+      Close;
+      DriverName := 'MSSQL';
+      Params.Values['HostName'] := 'localhost';
+      Params.Values['Database'] := 'master';
+      Params.Values['UserName'] := 'sa';
+      Params.Values['Password'] := 'ABcd!@34';
+      Params.Values['Port'] := '1433';
+      Params.Values['Encrypt'] := 'False';
+      Params.Values['ConnectionTimeout'] := '30';
+      Params.Values['IntegratedSecurity'] := 'False';
+      Open;
+      ShowMessage('Success!');
+    end;
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Error : ' + E.Message);
+    end;
   end;
-  // }
+  // *)
+
+  // dbExpress
+   (*
+  try
+    with (Self.exConDatabase) do
+    begin
+      Close;
+      DriverName := 'MSSQL';
+      Params.Values['HostName'] := 'localhost';
+      Params.Values['Database'] := 'master';
+      Params.Values['UserName'] := 'sa';
+      Params.Values['Password'] := 'ABcd!@34';
+      Params.Values['Port'] := '1433';
+      Params.Values['Encrypt'] := 'False';
+      Params.Values['ConnectionTimeout'] := '30';
+      Params.Values['IntegratedSecurity'] := 'False';
+      Open;
+      ShowMessage('Success!');
+    end;
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Error : ' + E.Message);
+    end;
+  end;
+  // *)
+
+  // ADO - SQLNCLI10
+   (*
+  try
+    with (Self.adConDatabase) do
+    begin
+      Close;
+      ConnectionString := ''
+        + 'Provider=SQLNCLI10;'
+        + 'Server=localhost;'
+        + 'Database=master;'
+        + 'Uid=sa;'
+        + 'Pwd=ABcd!@34;'
+      ;
+      Open;
+      ShowMessage('Success!');
+    end;
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Error : ' + E.Message);
+    end;
+  end;
+  // *)
+
+  // ADO - SQL Native Client - SQL Native Client 9.0 ODBC Driver
+   (*
+  try
+    with (Self.adConDatabase) do
+    begin
+      Close;
+      ConnectionString := ''
+        + 'Driver={SQL Native Client};'
+        + 'Server=localhost;'
+        + 'Database=master;'
+        + 'Uid=sa;'
+        + 'Pwd=ABcd!@34;'
+      ;
+      Open;
+      ShowMessage('Success!');
+    end;
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Error : ' + E.Message);
+    end;
+  end;
+  // *)
+
+  // ADO - SQL Server - Microsoft SQL Server ODBC Driver
+   (*
+  try
+    with (Self.adConDatabase) do
+    begin
+      Close;
+      ConnectionString := ''
+        + 'Driver={SQL Server};'
+        + 'Server=localhost;'
+        + 'Database=master;'
+        + 'Uid=sa;'
+        + 'Pwd=ABcd!@34;;'
+        + 'Trusted_Connection=Yes;'
+      ;
+      Open;
+      ShowMessage('Success!');
+    end;
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Error : ' + E.Message);
+    end;
+  end;
+  // *)
 end;
 
 end.

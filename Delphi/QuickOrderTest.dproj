@@ -1,15 +1,15 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{2AFE0141-9EA8-4F36-959C-4AB9C262D7EF}</ProjectGuid>
+        <ProjectGuid>{BE28CEEF-884C-4A01-9923-A51AC9FF3039}</ProjectGuid>
         <ProjectVersion>20.1</ProjectVersion>
-        <FrameworkType>VCL</FrameworkType>
+        <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
-        <ProjectName Condition="'$(ProjectName)'==''">QuickOrder</ProjectName>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <ProjectName Condition="'$(ProjectName)'==''">QuickOrderTest</ProjectName>
         <TargetedPlatforms>3</TargetedPlatforms>
-        <AppType>Application</AppType>
-        <MainSource>QuickOrder.dpr</MainSource>
+        <AppType>Console</AppType>
+        <MainSource>QuickOrderTest.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -46,60 +46,35 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
-        <Cfg_2_Win32>true</Cfg_2_Win32>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
-        <Cfg_2_Win64>true</Cfg_2_Win64>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_DcuOutput>.\Objects\$(Platform)\$(Config)</DCC_DcuOutput>
-        <DCC_ExeOutput>.\Binaries\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_ExeOutput>.\Binaries\Test$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
-        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
-        <SanitizedProjectName>QuickOrder</SanitizedProjectName>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=0.0.1.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <DCC_UnitSearchPath>.\Sources;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_MajorVer>0</VerInfo_MajorVer>
-        <VerInfo_Release>1</VerInfo_Release>
+        <DCC_UnitSearchPath>$(BDS)\Source\DUnit\src;.\Tests;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_Define>_CONSOLE_TESTRUNNER;$(DCC_Define)</DCC_Define>
+        <DCC_DcpOutput>.\Objects\$(Platform)\$(Config)</DCC_DcpOutput>
+        <VerInfo_Locale>1046</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <SanitizedProjectName>QuickOrderTest</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_UsePackage>vclwinx;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;FireDACCommonODBC;FireDACCommonDriver;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;FmxTeeUI;bindcompfmx;inetdb;ibmonitor;FireDACSqliteDriver;DbxClientDriver;Tee;soapmidas;vclactnband;TeeUI;fmxFireDAC;dbexpress;DBXMySQLDriver;VclSmp;inet;vcltouch;fmxase;dbrtl;Skia.Package.FMX;fmxdae;TeeDB;FireDACMSAccDriver;CustomIPTransport;vcldsnap;DBXInterBaseDriver;IndySystem;Skia.Package.VCL;vcldb;ibxbindings;vclFireDAC;bindcomp;FireDACCommon;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;adortl;vclimg;FireDACPgDriver;FireDAC;inetdbxpress;xmlrtl;tethering;ibxpress;bindcompvcl;dsnap;CloudService;vclib;fmxobj;bindcompvclsmp;FMXTee;soaprtl;soapserver;FireDACIBDriver;dxSkinBasicRS29;dxSkinBlackRS29;dxSkinBlueprintRS29;dxSkinBlueRS29;dxSkinCaramelRS29;dxSkinCoffeeRS29;dxSkinDarkRoomRS29;dxSkinDarkSideRS29;dxSkinDevExpressDarkStyleRS29;dxSkinDevExpressStyleRS29;dxSkinFoggyRS29;dxSkinGlassOceansRS29;dxSkinHighContrastRS29;dxSkiniMaginaryRS29;dxSkinLilianRS29;dxSkinLiquidSkyRS29;dxSkinLondonLiquidSkyRS29;dxSkinMcSkinRS29;dxSkinMetropolisDarkRS29;dxSkinMetropolisRS29;dxSkinMoneyTwinsRS29;dxSkinOffice2007BlackRS29;dxSkinOffice2007BlueRS29;dxSkinOffice2007GreenRS29;dxSkinOffice2007PinkRS29;dxSkinOffice2007SilverRS29;dxSkinOffice2010BlackRS29;dxSkinOffice2010BlueRS29;dxSkinOffice2010SilverRS29;dxSkinOffice2013DarkGrayRS29;dxSkinOffice2013LightGrayRS29;dxSkinOffice2013WhiteRS29;dxSkinOffice2016ColorfulRS29;dxSkinOffice2016DarkRS29;dxSkinOffice2019BlackRS29;dxSkinOffice2019ColorfulRS29;dxSkinOffice2019DarkGrayRS29;dxSkinOffice2019WhiteRS29;dxSkinPumpkinRS29;dxSkinSevenClassicRS29;dxSkinSevenRS29;dxSkinSharpPlusRS29;dxSkinSharpRS29;dxSkinSilverRS29;dxSkinSpringTimeRS29;dxSkinStardustRS29;dxSkinSummer2008RS29;dxSkinTheAsphaltWorldRS29;dxSkinTheBezierRS29;dxSkinValentineRS29;dxSkinVisualStudio2013BlueRS29;dxSkinVisualStudio2013DarkRS29;dxSkinVisualStudio2013LightRS29;dxSkinVS2010RS29;dxSkinWhiteprintRS29;dxSkinWXIRS29;dxSkinXmas2008BlueRS29;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>FireDACIBDriver;dxPScxCommonRS29;dxRibbonRS29;dxPSdxChartControlLnkRS29;vclwinx;dxPScxExtCommonRS29;dxRichEditControlCoreRS29;fmx;dxSpreadSheetReportDesignerRS29;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;FireDACCommonODBC;dxComnRS29;dxFlowChartDesignerRS29;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;dxBarExtDBItemsRS29;dbxcds;vcledge;cxVerticalGridRS29;FmxTeeUI;cxFireDACAdaptersRS29;dxPSDBTeeChartRS29;cxSchedulerWebServiceStorageRS29;dxPsPrVwAdvRS29;dxRichEditControlRS29;dacvcl290;FireDACSqliteDriver;DbxClientDriver;dxPSdxGaugeControlLnkRS29;soapmidas;dxRibbonCustomizationFormRS29;TeeUI;dbexpress;dxEMFRS29;dxDockingRS29;vquery290;inet;vcltouch;dxPSdxFCLnkRS29;dxorgcRS29;dxSpreadSheetCoreConditionalFormattingDialogsRS29;fmxdae;dxPSRichEditControlLnkRS29;dxPSdxSpreadSheetLnkRS29;CustomIPTransport;cxADOAdaptersRS29;dxPSPrVwRibbonRS29;IndySystem;dxPScxTLLnkRS29;dxPSdxDBOCLnkRS29;dxGDIPlusRS29;ibxbindings;vclFireDAC;dxPSCoreRS29;dxSpreadSheetRS29;FireDACCommon;dxPSdxMapControlLnkRS29;cxGridEMFRS29;dxPScxVGridLnkRS29;dxGanttControlRS29;dxPScxPivotGridLnkRS29;dxADOServerModeRS29;dxWizardControlRS29;bindcompdbx;rtl;FireDACMySQLDriver;dxCloudServiceLibraryRS29;cxIBXAdaptersRS29;dxServerModeRS29;DBXSqliteDriver;dxBarDBNavRS29;dxSpreadSheetCoreRS29;dxNavBarRS29;vclimg;unidacfmx290;inetdbxpress;FireDAC;xmlrtl;ibxpress;dsnap;dxPSdxLCLnkRS29;vclib;fmxobj;bindcompvclsmp;dxPSLnksRS29;dxmdsRS29;dxPSdxOCLnkRS29;cxSchedulerGridRS29;dxPScxSchedulerLnkRS29;dxChartControlRS29;dxPSdxDBTVLnkRS29;FireDACCommonDriver;dxGaugeControlRS29;IndyIPClient;dxPDFViewerRS29;bindcompvclwinx;dxOrgChartAdvancedCustomizeFormRS29;dxBarExtItemsRS29;bindcompfmx;crcontrols290;dxFlowChartLayoutsRS29;inetdb;dxdborRS29;ibmonitor;Tee;dxPScxGridLnkRS29;cxPivotGridChartRS29;vclactnband;fmxFireDAC;cxTreeListdxBarPopupMenuRS29;dxRichEditCoreRS29;DBXMySQLDriver;dxFlowChartAdvancedCustomizeFormRS29;VclSmp;cxSchedulerRibbonStyleEventEditorRS29;dxPSTeeChartRS29;fmxase;dxtrmdRS29;dxFlowChartRS29;dbrtl;dxPScxPCProdRS29;Skia.Package.FMX;TeeDB;FireDACMSAccDriver;cxGridRS29;dxSpellCheckerRS29;dxRichEditDocumentModelRS29;dxMapControlRS29;vcldsnap;DBXInterBaseDriver;cxLibraryRS29;Skia.Package.VCL;vcldb;dxPSdxPDFViewerLnkRS29;cxSchedulerTreeBrowserRS29;unidacvcl290;dacfmx290;bindcomp;dxTabbedMDIRS29;cxExportRS29;IndyCore;RESTBackendComponents;dxHttpIndyRequestRS29;dxTileControlRS29;dxFireDACServerModeRS29;cxPivotGridOLAPRS29;FireDACADSDriver;RESTComponents;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;dxCoreRS29;cxPivotGridRS29;dxdbtrRS29;dac290;dxSkinsCoreRS29;FireDACPgDriver;dxBarRS29;tethering;bindcompvcl;CloudService;dxSpreadSheetConditionalFormattingDialogsRS29;cxTreeListRS29;FMXTee;soaprtl;cxSchedulerRS29;unidac290;dxDBXServerModeRS29;soapserver;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
-        <Icon_MainIcon>QuickOrder.ico</Icon_MainIcon>
-        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
-        <UWP_DelphiLogo44>..\Logo.png</UWP_DelphiLogo44>
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <UWP_DelphiLogo150>..\Logo.png</UWP_DelphiLogo150>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>vclwinx;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;FireDACCommonODBC;FireDACCommonDriver;appanalytics;IndyProtocols;vclx;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;FmxTeeUI;bindcompfmx;inetdb;ibmonitor;FireDACSqliteDriver;DbxClientDriver;Tee;soapmidas;vclactnband;TeeUI;fmxFireDAC;dbexpress;DBXMySQLDriver;VclSmp;inet;vcltouch;fmxase;dbrtl;fmxdae;TeeDB;FireDACMSAccDriver;CustomIPTransport;vcldsnap;DBXInterBaseDriver;IndySystem;Skia.Package.VCL;vcldb;ibxbindings;vclFireDAC;bindcomp;FireDACCommon;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;adortl;vclimg;FireDACPgDriver;FireDAC;inetdbxpress;xmlrtl;tethering;ibxpress;bindcompvcl;dsnap;CloudService;vclib;fmxobj;bindcompvclsmp;FMXTee;soaprtl;soapserver;FireDACIBDriver;dxSkinBasicRS29;dxSkinBlackRS29;dxSkinBlueprintRS29;dxSkinBlueRS29;dxSkinCaramelRS29;dxSkinCoffeeRS29;dxSkinDarkRoomRS29;dxSkinDarkSideRS29;dxSkinDevExpressDarkStyleRS29;dxSkinDevExpressStyleRS29;dxSkinFoggyRS29;dxSkinGlassOceansRS29;dxSkinHighContrastRS29;dxSkiniMaginaryRS29;dxSkinLilianRS29;dxSkinLiquidSkyRS29;dxSkinLondonLiquidSkyRS29;dxSkinMcSkinRS29;dxSkinMetropolisDarkRS29;dxSkinMetropolisRS29;dxSkinMoneyTwinsRS29;dxSkinOffice2007BlackRS29;dxSkinOffice2007BlueRS29;dxSkinOffice2007GreenRS29;dxSkinOffice2007PinkRS29;dxSkinOffice2007SilverRS29;dxSkinOffice2010BlackRS29;dxSkinOffice2010BlueRS29;dxSkinOffice2010SilverRS29;dxSkinOffice2013DarkGrayRS29;dxSkinOffice2013LightGrayRS29;dxSkinOffice2013WhiteRS29;dxSkinOffice2016ColorfulRS29;dxSkinOffice2016DarkRS29;dxSkinOffice2019BlackRS29;dxSkinOffice2019ColorfulRS29;dxSkinOffice2019DarkGrayRS29;dxSkinOffice2019WhiteRS29;dxSkinPumpkinRS29;dxSkinSevenClassicRS29;dxSkinSevenRS29;dxSkinSharpPlusRS29;dxSkinSharpRS29;dxSkinSilverRS29;dxSkinSpringTimeRS29;dxSkinStardustRS29;dxSkinSummer2008RS29;dxSkinTheAsphaltWorldRS29;dxSkinTheBezierRS29;dxSkinValentineRS29;dxSkinVisualStudio2013BlueRS29;dxSkinVisualStudio2013DarkRS29;dxSkinVisualStudio2013LightRS29;dxSkinVS2010RS29;dxSkinWhiteprintRS29;dxSkinWXIRS29;dxSkinXmas2008BlueRS29;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>FireDACIBDriver;dxPScxCommonRS29;dxRibbonRS29;dxPSdxChartControlLnkRS29;vclwinx;dxPScxExtCommonRS29;dxRichEditControlCoreRS29;fmx;dxSpreadSheetReportDesignerRS29;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;FireDACCommonODBC;dxComnRS29;dxFlowChartDesignerRS29;appanalytics;IndyProtocols;vclx;dxBarExtDBItemsRS29;dbxcds;vcledge;cxVerticalGridRS29;FmxTeeUI;cxFireDACAdaptersRS29;dxPSDBTeeChartRS29;cxSchedulerWebServiceStorageRS29;dxPsPrVwAdvRS29;dxRichEditControlRS29;FireDACSqliteDriver;DbxClientDriver;dxPSdxGaugeControlLnkRS29;soapmidas;dxRibbonCustomizationFormRS29;TeeUI;dbexpress;dxEMFRS29;dxDockingRS29;inet;vcltouch;dxPSdxFCLnkRS29;dxorgcRS29;dxSpreadSheetCoreConditionalFormattingDialogsRS29;fmxdae;dxPSRichEditControlLnkRS29;dxPSdxSpreadSheetLnkRS29;CustomIPTransport;cxADOAdaptersRS29;dxPSPrVwRibbonRS29;IndySystem;dxPScxTLLnkRS29;dxPSdxDBOCLnkRS29;dxGDIPlusRS29;ibxbindings;vclFireDAC;dxPSCoreRS29;dxSpreadSheetRS29;FireDACCommon;dxPSdxMapControlLnkRS29;cxGridEMFRS29;dxPScxVGridLnkRS29;dxGanttControlRS29;dxPScxPivotGridLnkRS29;dxADOServerModeRS29;dxWizardControlRS29;bindcompdbx;rtl;FireDACMySQLDriver;dxCloudServiceLibraryRS29;cxIBXAdaptersRS29;dxServerModeRS29;DBXSqliteDriver;dxBarDBNavRS29;dxSpreadSheetCoreRS29;dxNavBarRS29;vclimg;inetdbxpress;FireDAC;xmlrtl;ibxpress;dsnap;dxPSdxLCLnkRS29;vclib;fmxobj;bindcompvclsmp;dxPSLnksRS29;dxmdsRS29;dxPSdxOCLnkRS29;cxSchedulerGridRS29;dxPScxSchedulerLnkRS29;dxChartControlRS29;dxPSdxDBTVLnkRS29;FireDACCommonDriver;dxGaugeControlRS29;IndyIPClient;dxPDFViewerRS29;bindcompvclwinx;dxOrgChartAdvancedCustomizeFormRS29;dxBarExtItemsRS29;bindcompfmx;dxFlowChartLayoutsRS29;inetdb;dxdborRS29;ibmonitor;Tee;dxPScxGridLnkRS29;cxPivotGridChartRS29;vclactnband;fmxFireDAC;cxTreeListdxBarPopupMenuRS29;dxRichEditCoreRS29;DBXMySQLDriver;dxFlowChartAdvancedCustomizeFormRS29;VclSmp;cxSchedulerRibbonStyleEventEditorRS29;dxPSTeeChartRS29;fmxase;dxtrmdRS29;dxFlowChartRS29;dbrtl;dxPScxPCProdRS29;TeeDB;FireDACMSAccDriver;cxGridRS29;dxSpellCheckerRS29;dxRichEditDocumentModelRS29;dxMapControlRS29;vcldsnap;DBXInterBaseDriver;cxLibraryRS29;Skia.Package.VCL;vcldb;dxPSdxPDFViewerLnkRS29;cxSchedulerTreeBrowserRS29;bindcomp;dxTabbedMDIRS29;cxExportRS29;IndyCore;RESTBackendComponents;dxHttpIndyRequestRS29;dxTileControlRS29;dxFireDACServerModeRS29;cxPivotGridOLAPRS29;FireDACADSDriver;RESTComponents;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;dxCoreRS29;cxPivotGridRS29;dxdbtrRS29;dxSkinsCoreRS29;FireDACPgDriver;dxBarRS29;tethering;bindcompvcl;CloudService;dxSpreadSheetConditionalFormattingDialogsRS29;cxTreeListRS29;FMXTee;soaprtl;cxSchedulerRS29;dxDBXServerModeRS29;soapserver;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_MajorVer>1</VerInfo_MajorVer>
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <VerInfo_Release>0</VerInfo_Release>
-        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
-        <Icon_MainIcon>QuickOrder.ico</Icon_MainIcon>
-        <UWP_DelphiLogo44>QuickOrder.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>QuickOrder.png</UWP_DelphiLogo150>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -113,14 +88,11 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
-        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <Icon_MainIcon>QuickOrder.ico</Icon_MainIcon>
-        <UWP_DelphiLogo44>QuickOrder.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>QuickOrder.png</UWP_DelphiLogo150>
-        <UsePackages>true</UsePackages>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
-        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>(None)</Manifest_File>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -128,33 +100,11 @@
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
-        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-    </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="Sources\uModelForm.pas">
-            <Form>ModelForm</Form>
-        </DCCReference>
-        <DCCReference Include="Sources\uMenuMain.pas">
-            <Form>MenuMain</Form>
-        </DCCReference>
-        <DCCReference Include="Sources\uDataMain.pas">
-            <Form>DataMain</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Sources\uMenuAbout.pas">
-            <Form>frmMenuAbout</Form>
-        </DCCReference>
-        <DCCReference Include="Sources\uModelRoutine.pas">
-            <Form>ModelRoutine</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
+        <DCCReference Include="Tests\TestUnitHelp.pas"/>
         <DCCReference Include="Sources\uUnitHelp.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -174,7 +124,7 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">QuickOrder.dpr</Source>
+                    <Source Name="MainSource">QuickOrderTest.dpr</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
@@ -182,23 +132,24 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
-                <DeployFile LocalName="Binaries\Win32\Debug\QuickOrder.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>QuickOrder.exe</RemoteName>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="QuickOrder.png" Configuration="Debug" Class="UWP_DelphiLogo44">
-                    <Platform Name="Win32">
-                        <RemoteDir>Assets\</RemoteDir>
-                        <RemoteName>Logo44x44.png</RemoteName>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libpcre.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="QuickOrder.png" Configuration="Release" Class="UWP_DelphiLogo44">
-                    <Platform Name="Win64">
-                        <RemoteDir>Assets\</RemoteDir>
-                        <RemoteName>Logo44x44.png</RemoteName>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Binaries\TestWin32\Release\QuickOrderTest.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>QuickOrderTest.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1158,7 +1109,10 @@
                 <Platform value="Win64">True</Platform>
             </Platforms>
             <UnitTesting>
-                <TestProjectName>S:\zrfisaac\mvp\QuickOrder\Delphi\QuickOrderTest.dproj</TestProjectName>
+                <TestFramework>DUnit / Delphi Win32</TestFramework>
+                <TestRunner>GUI</TestRunner>
+                <SourceProjectName>S:\zrfisaac\mvp\QuickOrder\Delphi\QuickOrder.dproj</SourceProjectName>
+                <TestProjectName/>
             </UnitTesting>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>

@@ -4,15 +4,11 @@ inherited MenuMain: TMenuMain
   StyleElements = [seFont, seClient, seBorder]
   OnCreate = FormCreate
   OnShow = FormShow
-  ExplicitLeft = 3
-  ExplicitTop = 3
-  ExplicitWidth = 600
   ExplicitHeight = 425
   TextHeight = 15
   inherited pnBack: TPanel
     Height = 342
     StyleElements = [seFont, seClient, seBorder]
-    ExplicitWidth = 582
     ExplicitHeight = 334
   end
   object sbFooter: TStatusBar
@@ -29,16 +25,16 @@ inherited MenuMain: TMenuMain
     Left = 16
     Top = 16
     object miMain: TMenuItem
-      Action = acMain
+      Caption = 'Main'
       object miOrder: TMenuItem
         Action = acOrder
       end
     end
     object miReport: TMenuItem
-      Caption = 'miReport'
+      Caption = 'Reports'
     end
     object miRecord: TMenuItem
-      Action = acRecord
+      Caption = 'Records'
       object miRecordProduct: TMenuItem
         Action = acRecordProduct
       end
@@ -47,7 +43,7 @@ inherited MenuMain: TMenuMain
       end
     end
     object miHelp: TMenuItem
-      Action = acHelp
+      Caption = 'Help'
       object miConfig: TMenuItem
         Action = acConfig
       end
@@ -68,17 +64,14 @@ inherited MenuMain: TMenuMain
       Category = 'miMain'
       Caption = 'Order'
       ShortCut = 116
-      OnExecute = acOrderExecute
     end
     object acRecordProduct: TAction
       Category = 'miRecord'
       Caption = 'acRecordProduct'
-      OnExecute = acRecordProductExecute
     end
     object acRecordClient: TAction
       Category = 'miRecord'
       Caption = 'acRecordClient'
-      OnExecute = acRecordClientExecute
     end
     object acAbout: TAction
       Category = 'miHelp'
@@ -91,18 +84,6 @@ inherited MenuMain: TMenuMain
       Caption = 'Configuration'
       ShortCut = 113
       OnExecute = acConfigExecute
-    end
-    object acRecord: TAction
-      Category = 'miRecord'
-      Caption = 'Records'
-    end
-    object acMain: TAction
-      Category = 'miMain'
-      Caption = 'Main'
-    end
-    object acHelp: TAction
-      Category = 'miHelp'
-      Caption = 'Help'
     end
   end
 end

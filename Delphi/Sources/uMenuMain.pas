@@ -51,15 +51,9 @@ type
     acRecordClient: TAction;
     acAbout: TAction;
     acConfig: TAction;
-    acRecord: TAction;
-    acMain: TAction;
-    acHelp: TAction;
     procedure FormShow(Sender: TObject);
     procedure acAboutExecute(Sender: TObject);
     procedure acConfigExecute(Sender: TObject);
-    procedure acOrderExecute(Sender: TObject);
-    procedure acRecordProductExecute(Sender: TObject);
-    procedure acRecordClientExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   end;
 
@@ -85,24 +79,6 @@ procedure TMenuMain.acConfigExecute(Sender: TObject);
 begin
   inherited;
   DataMain.Debug;
-end;
-
-procedure TMenuMain.acOrderExecute(Sender: TObject);
-begin
-  inherited;
-  //
-end;
-
-procedure TMenuMain.acRecordClientExecute(Sender: TObject);
-begin
-  inherited;
-  //
-end;
-
-procedure TMenuMain.acRecordProductExecute(Sender: TObject);
-begin
-  inherited;
-  //
 end;
 
 procedure TMenuMain.FormCreate(Sender: TObject);
