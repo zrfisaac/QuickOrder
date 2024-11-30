@@ -23,12 +23,17 @@ uses
   Vcl.ComCtrls,
   Vcl.StdCtrls,
   Vcl.ExtCtrls,
-  uModelRoutine;
+  uModelRoutine, Vcl.Buttons;
 
 type
   TMenuConfig = class(TModelRoutine)
     tsGeneral: TTabSheet;
     tsDatabase: TTabSheet;
+    pnRodape: TPanel;
+    pnRodape02: TPanel;
+    pnRodape01: TPanel;
+    pnRodape03: TPanel;
+    btNovo: TBitBtn;
   public
   end;
 

@@ -5,8 +5,8 @@ title: QuickOrder
 description: A lightweight MVP designed to showcase a streamlined client order management system.
 show_downloads: true
 #google_analytics: [Your Google Analytics tracking ID]
-github:
-  zip_url: http://example.com/download.zip
-  another_url: another value
+#github:
+#  zip_url: http://example.com/download.zip
+#  another_url: another value
 mermaid:
   src: 'path/to/mermaid.js'

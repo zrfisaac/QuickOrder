@@ -5,6 +5,9 @@
 <!-- # . - email : zrfisaac@gmail.com -->
 <!-- # . - site : zrfisaac.github.io -->
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.js"></script>
+
 <!-- # [ markdown ] -->
 [![](https://img.shields.io/badge/-english-4169E1?style=for-the-badge)](/README.en)
 [![](https://img.shields.io/badge/português--f9c22b?style=for-the-badge)](/README.pt)
