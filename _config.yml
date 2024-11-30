@@ -1,3 +1,14 @@
 theme: jekyll-theme-minimal
 title: Octocat's homepage
 description: Bookmark this to keep an eye on my project updates!
+page-col: "#121212"  # Dark background for pages
+text-col: "#E0E0E0"  # Light text for readability
+link-col: "#BB86FC"  # Light purple links
+hover-col: "#3700B3"  # Dark purple for hover effects
+navbar-col: "#1F1B24"  # Dark navbar
+navbar-text-col: "#E0E0E0"  # Light text on navbar
+navbar-border-col: "#333333"  # Dark border
+footer-col: "#1F1B24"  # Dark footer
+footer-text-col: "#E0E0E0"  # Light footer text
+footer-link-col: "#BB86FC"  # Purple footer links
+footer-hover-col: "#3700B3"  # Darker purple on hover
