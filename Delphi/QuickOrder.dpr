@@ -17,9 +17,11 @@ uses
   uModelForm in 'Sources\uModelForm.pas' {ModelForm},
   uMenuMain in 'Sources\uMenuMain.pas' {MenuMain},
   uDataMain in 'Sources\uDataMain.pas' {DataMain: TDataModule},
-  uMenuAbout in 'Sources\uMenuAbout.pas' {frmMenuAbout},
+  uMenuAbout in 'Sources\uMenuAbout.pas' {MenuAbout},
   uModelRoutine in 'Sources\uModelRoutine.pas' {ModelRoutine},
-  uUnitHelp in 'Sources\uUnitHelp.pas';
+  uUnitHelp in 'Sources\uUnitHelp.pas',
+  uUnitConfig in 'Sources\uUnitConfig.pas',
+  uMenuConfig in 'Sources\uMenuConfig.pas' {MenuConfig};
 
 {$R *.res}
 
@@ -28,7 +30,8 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Quick Order';
   Application.CreateForm(TMenuMain, MenuMain);
-  Application.CreateForm(TfrmMenuAbout, frmMenuAbout);
+  Application.CreateForm(TMenuAbout, MenuAbout);
   Application.CreateForm(TModelRoutine, ModelRoutine);
+  Application.CreateForm(TMenuConfig, MenuConfig);
   Application.Run;
 end.

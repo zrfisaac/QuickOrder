@@ -1,6 +1,7 @@
-object frmMenuAbout: TfrmMenuAbout
+object MenuAbout: TMenuAbout
   Left = 0
   Top = 0
+  BiDiMode = bdLeftToRight
   BorderStyle = bsDialog
   Caption = 'Sobre'
   ClientHeight = 161
@@ -11,6 +12,7 @@ object frmMenuAbout: TfrmMenuAbout
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  ParentBiDiMode = False
   Position = poMainFormCenter
   TextHeight = 15
   object pnBack: TPanel
@@ -23,7 +25,7 @@ object frmMenuAbout: TfrmMenuAbout
     Color = 2367774
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 582
+    ExplicitWidth = 502
     ExplicitHeight = 153
     object pnBack01: TPanel
       Left = 0
@@ -122,7 +124,7 @@ object frmMenuAbout: TfrmMenuAbout
       Color = 2367774
       ParentBackground = False
       TabOrder = 2
-      ExplicitWidth = 403
+      ExplicitWidth = 323
       ExplicitHeight = 153
       object meAbout: TMemo
         Left = 0
@@ -150,7 +152,7 @@ object frmMenuAbout: TfrmMenuAbout
         ReadOnly = True
         ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitWidth = 403
+        ExplicitWidth = 323
         ExplicitHeight = 153
       end
     end

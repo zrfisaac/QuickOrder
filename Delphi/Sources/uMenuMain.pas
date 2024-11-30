@@ -55,6 +55,13 @@ type
     procedure acAboutExecute(Sender: TObject);
     procedure acConfigExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+  private
+    FMenu: TForm;
+  public
+    procedure Clean;
+    procedure Menu(AClass: TComponentClass; var AReference); overload;
+    procedure Menu(var AReference; AClass: TComponentClass); overload;
+    procedure Modal(AClass: TComponentClass);
   end;
 
 var
@@ -65,14 +72,15 @@ implementation
 uses
   // .\Sources
   uDataMain,
-  uMenuAbout;
+  uMenuAbout,
+  uUnitHelp;
 
 {$R *.dfm}
 
 procedure TMenuMain.acAboutExecute(Sender: TObject);
 begin
   inherited;
-  TfrmMenuAbout.Start;
+  TMenuAbout.Start;
 end;
 
 procedure TMenuMain.acConfigExecute(Sender: TObject);
@@ -81,9 +89,24 @@ begin
   DataMain.Debug;
 end;
 
+procedure TMenuMain.Clean;
+begin
+  if (Assigned(FMenu)) then
+    TModelForm(FMenu).pnBack.Parent := TWinControl(TModelForm(FMenu).pnBack.Owner);
+  Self.FMenu := nil;
+end;
+
 procedure TMenuMain.FormCreate(Sender: TObject);
 begin
   inherited;
+  // Title
+  Self.Caption := Application.Title;
+
+  // Version
+  if (Self.sbFooter.Panels.Count > 0) then
+    Self.sbFooter.Panels[0].Text := UnitHelp.Version;
+
+  // DataModule
   if not Assigned(DataMain) then
     DataMain := TDataMain.Create(Application);
 end;
@@ -94,4 +117,46 @@ begin
   Self.Caption := Application.Title;
 end;
 
+procedure TMenuMain.Menu(AClass: TComponentClass; var AReference);
+var
+  AInstance: TModelForm;
+begin
+  if (AClass.InheritsFrom(TModelForm)) then
+  begin
+    if not(Assigned(TModelForm(AReference))) then
+    begin
+      AInstance := TModelForm(AClass.NewInstance);
+      TModelForm(AReference) := AInstance;
+      AInstance.Create(Application);
+      AInstance.Start;
+    end;
+    AInstance := TModelForm(AReference);
+    FMenu := TForm(AInstance);
+    if (AInstance.Check) then
+    begin
+      Self.Clean;
+      AInstance.pnBack.Parent := Self.pnBack;
+    end;
+  end;
+end;
+
+procedure TMenuMain.Menu(var AReference; AClass: TComponentClass);
+begin
+  Self.Menu(AClass, AReference);
+end;
+
+procedure TMenuMain.Modal(AClass: TComponentClass);
+var
+  AInstance: TForm;
+begin
+  if (AClass.InheritsFrom(TForm)) then
+  begin
+    AInstance := TForm(AClass.NewInstance);
+    AInstance.Create(Application);
+    AInstance.ShowModal;
+    AInstance.Free;
+  end;
+end;
+
 end.
+

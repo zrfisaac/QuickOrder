@@ -16,7 +16,10 @@ inherited MenuMain: TMenuMain
     Top = 342
     Width = 584
     Height = 19
-    Panels = <>
+    Panels = <
+      item
+        Width = 50
+      end>
     ExplicitTop = 334
     ExplicitWidth = 582
   end

@@ -6,12 +6,11 @@
 // # . - site : zrfisaac.github.io
 
 // # [ delphi12 ]
-unit uModelForm;
+unit uMenuConfig;
 
 interface
 
 uses
-  // Delphi
   Winapi.Windows,
   Winapi.Messages,
   System.SysUtils,
@@ -21,34 +20,21 @@ uses
   Vcl.Controls,
   Vcl.Forms,
   Vcl.Dialogs,
-  Vcl.ExtCtrls;
+  Vcl.ComCtrls,
+  Vcl.StdCtrls,
+  Vcl.ExtCtrls,
+  uModelRoutine;
 
 type
-  TModelForm = class(TForm)
-    pnBack: TPanel;
+  TMenuConfig = class(TModelRoutine)
   public
-    function Check: Boolean; virtual;
-    procedure Start; virtual;
   end;
 
 var
-  ModelForm: TModelForm;
+  MenuConfig: TMenuConfig;
 
 implementation
 
 {$R *.dfm}
 
-{ TModelForm }
-
-function TModelForm.Check: Boolean;
-begin
-  // Virtual Method
-end;
-
-procedure TModelForm.Start;
-begin
-  // Virtual Method
-end;
-
 end.
-

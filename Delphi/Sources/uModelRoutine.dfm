@@ -1,6 +1,8 @@
 inherited ModelRoutine: TModelRoutine
   Caption = 'ModelRoutine'
   StyleElements = [seFont, seClient, seBorder]
+  ExplicitWidth = 600
+  ExplicitHeight = 400
   TextHeight = 15
   inherited pnBack: TPanel
     StyleElements = [seFont, seClient, seBorder]
@@ -11,7 +13,6 @@ inherited ModelRoutine: TModelRoutine
       Height = 33
       Align = alTop
       TabOrder = 0
-      ExplicitWidth = 582
       object imHeader: TImage
         Left = 1
         Top = 1
@@ -32,15 +33,30 @@ inherited ModelRoutine: TModelRoutine
         ExplicitHeight = 15
       end
     end
-    object pcMain: TPageControl
+    object pnBody: TPanel
       Left = 0
       Top = 33
       Width = 584
       Height = 328
       Align = alClient
+      BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 582
-      ExplicitHeight = 320
+      ExplicitLeft = 208
+      ExplicitTop = 176
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      object pcBody: TPageControl
+        Left = 0
+        Top = 0
+        Width = 584
+        Height = 328
+        Align = alClient
+        TabOrder = 0
+        ExplicitLeft = 2
+        ExplicitTop = 2
+        ExplicitWidth = 582
+        ExplicitHeight = 326
+      end
     end
   end
 end

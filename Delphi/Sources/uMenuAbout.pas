@@ -28,7 +28,7 @@ uses
   Vcl.ActnList;
 
 type
-  TfrmMenuAbout = class(TForm)
+  TMenuAbout = class(TForm)
     pnBack: TPanel;
     pnBack01: TPanel;
     lbTitle01: TLabel;
@@ -50,39 +50,40 @@ type
   end;
 
 var
-  frmMenuAbout: TfrmMenuAbout;
+  MenuAbout: TMenuAbout;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfrmMenuAbout.acEnterExecute(Sender: TObject);
+procedure TMenuAbout.acEnterExecute(Sender: TObject);
 begin
   Self.Exit;
 end;
 
-procedure TfrmMenuAbout.acEscExecute(Sender: TObject);
+procedure TMenuAbout.acEscExecute(Sender: TObject);
 begin
   Self.Exit;
 end;
 
-procedure TfrmMenuAbout.Exit;
+procedure TMenuAbout.Exit;
 begin
   Self.Close;
 end;
 
-procedure TfrmMenuAbout.lbTitle04Click(Sender: TObject);
+procedure TMenuAbout.lbTitle04Click(Sender: TObject);
 begin
   ShellExecute(0, 'open', PChar('https://zrfisaac.github.io'), nil, nil, SW_SHOWNORMAL);
 end;
 
-class procedure TfrmMenuAbout.Start;
+class procedure TMenuAbout.Start;
 var
-  _Form: TfrmMenuAbout;
+  _Form: TMenuAbout;
 begin
-  _Form := TfrmMenuAbout.Create(Application);
+  _Form := TMenuAbout.Create(Application);
   _Form.ShowModal;
   _Form.Free;
 end;
 
 end.
+

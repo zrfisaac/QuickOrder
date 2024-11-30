@@ -29,9 +29,14 @@ uses
 type
   TModelRoutine = class(TModelForm)
     pnHeader: TPanel;
-    pcMain: TPageControl;
     imHeader: TImage;
     lbHeader: TLabel;
+    pnBody: TPanel;
+    pcBody: TPageControl;
+  private
+    FPage: TPanel;
+  public
+    procedure Page(APage: TPanel);
   end;
 
 var
@@ -41,4 +46,16 @@ implementation
 
 {$R *.dfm}
 
+{ TModelRoutine }
+
+procedure TModelRoutine.Page(APage: TPanel);
+begin
+  Self.pcBody.Visible := False;
+  if (Assigned(FPage)) then
+    FPage.Parent := TWinControl(FPage.Owner);
+  FPage := APage;
+  FPage.Parent := Self.pnBody;
+end;
+
 end.
+
