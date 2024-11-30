@@ -20,3 +20,7 @@ footer-link-col: "#BB86FC"  # Purple footer links
 footer-hover-col: "#3700B3"  # Darker purple on hover
 
 # Optional: Add other configurations if needed for your specific setup
+dark-theme:
+  active: true  # Activate dark theme toggle
+  button-label: "Switch to Dark Mode"
+  button-position: top-right
