@@ -34,7 +34,7 @@ This project uses the following tools and libraries:
 
 ## Entity-Relationship Diagram (ERD)
 
-```mermaid
+```mermaid!
 erDiagram
     tb_client {
         INT cl_client PK "Client code (primary key)"
