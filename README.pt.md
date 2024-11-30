@@ -6,8 +6,8 @@
 <!-- # . - site : zrfisaac.github.io -->
 
 <!-- # [ markdown ] -->
-[![](https://img.shields.io/badge/english--4169E1?style=for-the-badge)](README.en.md)
-[![](https://img.shields.io/badge/-português-f9c22b?style=for-the-badge)](README.pt.md)
+[![](https://img.shields.io/badge/english--4169E1?style=for-the-badge)](/README.en)
+[![](https://img.shields.io/badge/-português-f9c22b?style=for-the-badge)](/README.pt)
 
 # <img src="Logo.png" alt="Logo" width="32" height="32"> QuickOrder - Sistema de Gerenciamento de Pedidos de Clientes
 
