@@ -12,8 +12,8 @@
 !include "x64.nsh"
 
 ; # - Geral
-Name "Quick Order 0.0.1 x32"
-OutFile "..\Output\QuickOrder_0.0.1_Win32.exe"
+Name "Quick Order 0.0.1 x64"
+OutFile "..\Output\QuickOrder_0.0.1_Win64.exe"
 Unicode True
 InstallDir "$LOCALAPPDATA\QuickOrder"
 InstallDirRegKey HKCU "SOFTWARE\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" ""
@@ -61,7 +61,7 @@ FunctionEnd
 
 ; # - Version
 VIProductVersion "0.0.1.2"
-VIAddVersionKey "ProductName" "Quick Order x32"
+VIAddVersionKey "ProductName" "Quick Order x64"
 VIAddVersionKey "Comments" ""
 VIAddVersionKey "CompanyName" "Isaac Caires / zrfisaac.github.io"
 VIAddVersionKey "LegalTrademarks" "Isaac Caires / zrfisaac.github.io"
@@ -81,7 +81,7 @@ Section Base
 	; # : - Files
 	SetOutPath "$INSTDIR"
 	File "..\Delphi\QuickOrder.ico"
-	File "..\Delphi\Binaries\Win32\Release\QuickOrder.exe"
+	File "..\Delphi\Binaries\Win64\Release\QuickOrder.exe"
 
 	; # : - Uninstaller
 	WriteUninstaller "$INSTDIR\Uninstall.exe"
@@ -90,7 +90,7 @@ Section Base
 	CreateShortcut "$SMPROGRAMS\Quick Order.lnk" "$INSTDIR\QuickOrder.exe" "" "$INSTDIR\QuickOrder.ico"
 
 	; # : - Control Panel
-	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "DisplayName" "Quick Order 5.2.0.2 x32"
+	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "DisplayName" "Quick Order 5.2.0.2 x64"
 	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "UninstallString" "$\"$INSTDIR\Uninstall.exe$\""
 	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "QuietUninstallString" "$\"$INSTDIR\Uninstall.exe$\" /S"
 	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "InstallLocation" "$\"$INSTDIR$\""

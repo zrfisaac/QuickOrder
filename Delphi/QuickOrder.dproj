@@ -4,8 +4,8 @@
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <ProjectName Condition="'$(ProjectName)'==''">QuickOrder</ProjectName>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -72,11 +72,11 @@
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>QuickOrder</SanitizedProjectName>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=Client Order Management System;FileVersion=0.0.4.0;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=Quick Order;ProductVersion=0.0.4.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=Client Order Management System;FileVersion=0.0.5.0;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=Quick Order;ProductVersion=0.0.5.0;Comments=</VerInfo_Keys>
         <DCC_UnitSearchPath>.\Sources;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_MajorVer>0</VerInfo_MajorVer>
-        <VerInfo_Release>4</VerInfo_Release>
+        <VerInfo_Release>5</VerInfo_Release>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
@@ -88,7 +88,6 @@
         <UWP_DelphiLogo44>..\Logo.png</UWP_DelphiLogo44>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <UWP_DelphiLogo150>..\Logo.png</UWP_DelphiLogo150>
-        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>vclwinx;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;FireDACCommonODBC;FireDACCommonDriver;appanalytics;IndyProtocols;vclx;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;FmxTeeUI;bindcompfmx;inetdb;ibmonitor;FireDACSqliteDriver;DbxClientDriver;Tee;soapmidas;vclactnband;TeeUI;fmxFireDAC;dbexpress;DBXMySQLDriver;VclSmp;inet;vcltouch;fmxase;dbrtl;fmxdae;TeeDB;FireDACMSAccDriver;CustomIPTransport;vcldsnap;DBXInterBaseDriver;IndySystem;Skia.Package.VCL;vcldb;ibxbindings;vclFireDAC;bindcomp;FireDACCommon;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;adortl;vclimg;FireDACPgDriver;FireDAC;inetdbxpress;xmlrtl;tethering;ibxpress;bindcompvcl;dsnap;CloudService;vclib;fmxobj;bindcompvclsmp;FMXTee;soaprtl;soapserver;FireDACIBDriver;dxSkinBasicRS29;dxSkinBlackRS29;dxSkinBlueprintRS29;dxSkinBlueRS29;dxSkinCaramelRS29;dxSkinCoffeeRS29;dxSkinDarkRoomRS29;dxSkinDarkSideRS29;dxSkinDevExpressDarkStyleRS29;dxSkinDevExpressStyleRS29;dxSkinFoggyRS29;dxSkinGlassOceansRS29;dxSkinHighContrastRS29;dxSkiniMaginaryRS29;dxSkinLilianRS29;dxSkinLiquidSkyRS29;dxSkinLondonLiquidSkyRS29;dxSkinMcSkinRS29;dxSkinMetropolisDarkRS29;dxSkinMetropolisRS29;dxSkinMoneyTwinsRS29;dxSkinOffice2007BlackRS29;dxSkinOffice2007BlueRS29;dxSkinOffice2007GreenRS29;dxSkinOffice2007PinkRS29;dxSkinOffice2007SilverRS29;dxSkinOffice2010BlackRS29;dxSkinOffice2010BlueRS29;dxSkinOffice2010SilverRS29;dxSkinOffice2013DarkGrayRS29;dxSkinOffice2013LightGrayRS29;dxSkinOffice2013WhiteRS29;dxSkinOffice2016ColorfulRS29;dxSkinOffice2016DarkRS29;dxSkinOffice2019BlackRS29;dxSkinOffice2019ColorfulRS29;dxSkinOffice2019DarkGrayRS29;dxSkinOffice2019WhiteRS29;dxSkinPumpkinRS29;dxSkinSevenClassicRS29;dxSkinSevenRS29;dxSkinSharpPlusRS29;dxSkinSharpRS29;dxSkinSilverRS29;dxSkinSpringTimeRS29;dxSkinStardustRS29;dxSkinSummer2008RS29;dxSkinTheAsphaltWorldRS29;dxSkinTheBezierRS29;dxSkinValentineRS29;dxSkinVisualStudio2013BlueRS29;dxSkinVisualStudio2013DarkRS29;dxSkinVisualStudio2013LightRS29;dxSkinVS2010RS29;dxSkinWhiteprintRS29;dxSkinWXIRS29;dxSkinXmas2008BlueRS29;$(DCC_UsePackage)</DCC_UsePackage>
@@ -102,7 +101,6 @@
         <Icon_MainIcon>QuickOrder.ico</Icon_MainIcon>
         <UWP_DelphiLogo44>QuickOrder.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>QuickOrder.png</UWP_DelphiLogo150>
-        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -121,7 +119,8 @@
         <UWP_DelphiLogo44>QuickOrder.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>QuickOrder.png</UWP_DelphiLogo150>
         <UsePackages>true</UsePackages>
-        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+        <VerInfo_Build>5</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=Client Order Management System;FileVersion=0.0.5.5;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=Quick Order;ProductVersion=0.0.5.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -144,9 +143,9 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_MajorVer>1</VerInfo_MajorVer>
         <VerInfo_Release>0</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.4;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.6;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <Icon_MainIcon>QuickOrder.ico</Icon_MainIcon>
-        <VerInfo_Build>4</VerInfo_Build>
+        <VerInfo_Build>6</VerInfo_Build>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -173,6 +172,18 @@
         <DCCReference Include="Sources\uUnitConfig.pas"/>
         <DCCReference Include="Sources\uMenuConfig.pas">
             <Form>MenuConfig</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Sources\uRecordProduct.pas">
+            <Form>RecordProduct</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Sources\uRecordClient.pas">
+            <Form>RecordClient</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Sources\uRoutineOrder.pas">
+            <Form>RoutineOrder</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

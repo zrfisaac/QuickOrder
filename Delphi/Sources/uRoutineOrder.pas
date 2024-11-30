@@ -6,7 +6,7 @@
 // # . - site : zrfisaac.github.io
 
 // # [ delphi12 ]
-unit uMenuConfig;
+unit uRoutineOrder;
 
 interface
 
@@ -26,14 +26,11 @@ uses
   uModelRoutine;
 
 type
-  TMenuConfig = class(TModelRoutine)
-    tsGeneral: TTabSheet;
-    tsDatabase: TTabSheet;
-  public
+  TRoutineOrder = class(TModelRoutine)
   end;
 
 var
-  MenuConfig: TMenuConfig;
+  RoutineOrder: TRoutineOrder;
 
 implementation
 

@@ -43,6 +43,7 @@ implementation
 function TModelForm.Check: Boolean;
 begin
   // Virtual Method
+  Result := True;
 end;
 
 procedure TModelForm.Start;

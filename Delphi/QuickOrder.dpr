@@ -21,7 +21,10 @@ uses
   uModelRoutine in 'Sources\uModelRoutine.pas' {ModelRoutine},
   uUnitHelp in 'Sources\uUnitHelp.pas',
   uUnitConfig in 'Sources\uUnitConfig.pas',
-  uMenuConfig in 'Sources\uMenuConfig.pas' {MenuConfig};
+  uMenuConfig in 'Sources\uMenuConfig.pas' {MenuConfig},
+  uRecordProduct in 'Sources\uRecordProduct.pas' {RecordProduct},
+  uRecordClient in 'Sources\uRecordClient.pas' {RecordClient},
+  uRoutineOrder in 'Sources\uRoutineOrder.pas' {RoutineOrder};
 
 {$R *.res}
 
@@ -33,5 +36,8 @@ begin
   Application.CreateForm(TMenuAbout, MenuAbout);
   Application.CreateForm(TModelRoutine, ModelRoutine);
   Application.CreateForm(TMenuConfig, MenuConfig);
+  Application.CreateForm(TRecordProduct, RecordProduct);
+  Application.CreateForm(TRecordClient, RecordClient);
+  Application.CreateForm(TRoutineOrder, RoutineOrder);
   Application.Run;
 end.

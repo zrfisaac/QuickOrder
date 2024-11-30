@@ -55,6 +55,8 @@ type
     procedure acAboutExecute(Sender: TObject);
     procedure acConfigExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure acRecordProductExecute(Sender: TObject);
+    procedure acRecordClientExecute(Sender: TObject);
   private
     FMenu: TForm;
   public
@@ -73,6 +75,10 @@ uses
   // .\Sources
   uDataMain,
   uMenuAbout,
+  uMenuConfig,
+  uRecordClient,
+  uRecordProduct,
+  uRoutineOrder,
   uUnitHelp;
 
 {$R *.dfm}
@@ -80,13 +86,25 @@ uses
 procedure TMenuMain.acAboutExecute(Sender: TObject);
 begin
   inherited;
-  TMenuAbout.Start;
+  Self.Modal(TMenuAbout);
 end;
 
 procedure TMenuMain.acConfigExecute(Sender: TObject);
 begin
   inherited;
-  DataMain.Debug;
+    Self.Menu(TMenuConfig, MenuConfig);
+end;
+
+procedure TMenuMain.acRecordClientExecute(Sender: TObject);
+begin
+  inherited;
+  Self.Menu(TRecordClient, RecordClient);
+end;
+
+procedure TMenuMain.acRecordProductExecute(Sender: TObject);
+begin
+  inherited;
+  Self.Menu(TRecordProduct, RecordProduct);
 end;
 
 procedure TMenuMain.Clean;
@@ -99,6 +117,7 @@ end;
 procedure TMenuMain.FormCreate(Sender: TObject);
 begin
   inherited;
+
   // Title
   Self.Caption := Application.Title;
 

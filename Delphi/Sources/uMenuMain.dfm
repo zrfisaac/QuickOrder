@@ -71,10 +71,12 @@ inherited MenuMain: TMenuMain
     object acRecordProduct: TAction
       Category = 'miRecord'
       Caption = 'acRecordProduct'
+      OnExecute = acRecordProductExecute
     end
     object acRecordClient: TAction
       Category = 'miRecord'
       Caption = 'acRecordClient'
+      OnExecute = acRecordClientExecute
     end
     object acAbout: TAction
       Category = 'miHelp'

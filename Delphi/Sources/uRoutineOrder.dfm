@@ -1,5 +1,5 @@
-inherited MenuConfig: TMenuConfig
-  Caption = 'MenuConfig'
+inherited RoutineOrder: TRoutineOrder
+  Caption = 'RoutineOrder'
   StyleElements = [seFont, seClient, seBorder]
   TextHeight = 15
   inherited pnBack: TPanel
@@ -8,8 +8,6 @@ inherited MenuConfig: TMenuConfig
       StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 582
       inherited lbHeader: TLabel
-        Width = 550
-        Height = 31
         StyleElements = [seFont, seClient, seBorder]
       end
     end
@@ -20,18 +18,9 @@ inherited MenuConfig: TMenuConfig
       ExplicitWidth = 582
       ExplicitHeight = 320
       inherited pcBody: TPageControl
-        ActivePage = tsDatabase
         ExplicitLeft = 0
         ExplicitTop = 0
-        ExplicitWidth = 584
-        ExplicitHeight = 328
-        object tsGeneral: TTabSheet
-          Caption = 'General'
-        end
-        object tsDatabase: TTabSheet
-          Caption = 'Database'
-          ImageIndex = 1
-        end
+        ExplicitHeight = 320
       end
     end
   end
