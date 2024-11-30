@@ -91,4 +91,8 @@ inherited MenuMain: TMenuMain
       OnExecute = acConfigExecute
     end
   end
+  object dxSkinController1: TdxSkinController
+    Left = 96
+    Top = 64
+  end
 end

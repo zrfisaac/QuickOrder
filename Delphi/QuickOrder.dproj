@@ -116,8 +116,8 @@
         <UWP_DelphiLogo44>QuickOrder.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>QuickOrder.png</UWP_DelphiLogo150>
         <UsePackages>true</UsePackages>
-        <VerInfo_Build>1</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=A lightweight MVP designed to showcase a streamlined client order management system.;FileVersion=0.0.14.1;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=zrfisaac.mvp.QuickOrder;ProductName=Quick Order;ProductVersion=0.0.14.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>3</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=A lightweight MVP designed to showcase a streamlined client order management system.;FileVersion=0.0.14.3;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=zrfisaac.mvp.QuickOrder;ProductName=Quick Order;ProductVersion=0.0.14.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
