@@ -32,6 +32,7 @@ This project uses the following tools and libraries:
 
 ##
 
+<!--
 ## Entity-Relationship Diagram (ERD)
 
 ```mermaid
@@ -70,6 +71,7 @@ erDiagram
     tb_order ||--o{ tb_order_item : "contains"
     tb_product ||--o{ tb_order_item : "is part of"
 ```
+-->
 
 ### Explanation:
 - **`tb_client`**: Contains client details.
