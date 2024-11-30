@@ -4,8 +4,8 @@
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <ProjectName Condition="'$(ProjectName)'==''">QuickOrder</ProjectName>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -72,11 +72,11 @@
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>QuickOrder</SanitizedProjectName>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=A lightweight MVP designed to showcase a streamlined client order management system.;FileVersion=0.0.14.0;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=zrfisaac.mvp.QuickOrder;ProductName=Quick Order;ProductVersion=0.0.14.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=A lightweight MVP designed to showcase a streamlined client order management system.;FileVersion=0.0.27.0;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=zrfisaac.mvp.QuickOrder;ProductName=Quick Order;ProductVersion=0.0.27.0;Comments=</VerInfo_Keys>
         <DCC_UnitSearchPath>.\Sources;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_MajorVer>0</VerInfo_MajorVer>
-        <VerInfo_Release>14</VerInfo_Release>
+        <VerInfo_Release>27</VerInfo_Release>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
@@ -116,8 +116,8 @@
         <UWP_DelphiLogo44>QuickOrder.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>QuickOrder.png</UWP_DelphiLogo150>
         <UsePackages>true</UsePackages>
-        <VerInfo_Build>3</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=A lightweight MVP designed to showcase a streamlined client order management system.;FileVersion=0.0.14.3;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=zrfisaac.mvp.QuickOrder;ProductName=Quick Order;ProductVersion=0.0.14.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>1</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=A lightweight MVP designed to showcase a streamlined client order management system.;FileVersion=0.0.27.1;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=zrfisaac.mvp.QuickOrder;ProductName=Quick Order;ProductVersion=0.0.27.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -132,9 +132,13 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <Icon_MainIcon>QuickOrder.ico</Icon_MainIcon>
+        <VerInfo_Build>1</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=A lightweight MVP designed to showcase a streamlined client order management system.;FileVersion=0.0.27.1;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=zrfisaac.mvp.QuickOrder;ProductName=Quick Order;ProductVersion=0.0.27.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_Build>1</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Isaac Caires / zrfisaac.github.io;FileDescription=A lightweight MVP designed to showcase a streamlined client order management system.;FileVersion=0.0.27.1;InternalName=zrfisaac.mvp.QuickOrder;LegalCopyright=Isaac Caires / zrfisaac.github.io;LegalTrademarks=Isaac Caires / zrfisaac.github.io;OriginalFilename=QuickOrder;ProgramID=zrfisaac.mvp.QuickOrder;ProductName=Quick Order;ProductVersion=0.0.27.0;Comments=</VerInfo_Keys>
         <Icon_MainIcon>QuickOrder.ico</Icon_MainIcon>
     </PropertyGroup>
     <ItemGroup>
@@ -176,6 +180,7 @@
             <Form>RoutineOrder</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <None Include="QuickOrder.inc"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -211,6 +216,12 @@
                 <DeployFile LocalName="Binaries\Win64\Release\QuickOrder.exe" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>QuickOrder.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="QuickOrder.inc" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

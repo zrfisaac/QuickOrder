@@ -8,6 +8,8 @@
 // # [ delphi12 ]
 unit uMenuMain;
 
+{$I QuickOrder.inc}
+
 interface
 
 uses
@@ -28,70 +30,74 @@ uses
   Vcl.ImgList,
   Vcl.Menus,
   Vcl.ActnList,
+  // DevExpress
+  {$IFDEF DEVEXPRESS}
+    dxSkinsCore,
+    dxSkinBasic,
+    dxSkinBlack,
+    dxSkinBlue,
+    dxSkinBlueprint,
+    dxSkinCaramel,
+    dxSkinCoffee,
+    dxSkinDarkroom,
+    dxSkinDarkSide,
+    dxSkinDevExpressDarkStyle,
+    dxSkinDevExpressStyle,
+    dxSkinFoggy,
+    dxSkinGlassOceans,
+    dxSkinHighContrast,
+    dxSkiniMaginary,
+    dxSkinLilian,
+    dxSkinLiquidSky,
+    dxSkinLondonLiquidSky,
+    dxSkinMcSkin,
+    dxSkinMetropolis,
+    dxSkinMetropolisDark,
+    dxSkinMoneyTwins,
+    dxSkinOffice2007Black,
+    dxSkinOffice2007Blue,
+    dxSkinOffice2007Green,
+    dxSkinOffice2007Pink,
+    dxSkinOffice2007Silver,
+    dxSkinOffice2010Black,
+    dxSkinOffice2010Blue,
+    dxSkinOffice2010Silver,
+    dxSkinOffice2013DarkGray,
+    dxSkinOffice2013LightGray,
+    dxSkinOffice2013White,
+    dxSkinOffice2016Colorful,
+    dxSkinOffice2016Dark,
+    dxSkinOffice2019Black,
+    dxSkinOffice2019Colorful,
+    dxSkinOffice2019DarkGray,
+    dxSkinOffice2019White,
+    dxSkinPumpkin,
+    dxSkinSeven,
+    dxSkinSevenClassic,
+    dxSkinSharp,
+    dxSkinSharpPlus,
+    dxSkinSilver,
+    dxSkinSpringtime,
+    dxSkinStardust,
+    dxSkinSummer2008,
+    dxSkinTheAsphaltWorld,
+    dxSkinTheBezier,
+    dxSkinValentine,
+    dxSkinVisualStudio2013Blue,
+    dxSkinVisualStudio2013Dark,
+    dxSkinVisualStudio2013Light,
+    dxSkinVS2010,
+    dxSkinWhiteprint,
+    dxSkinWXI,
+    dxSkinXmas2008Blue,
+    dxCore,
+    cxClasses,
+    cxLookAndFeels,
+    dxSkinsForm,
+  {$ENDIF}
   // .\Sources
-  uModelForm,
-  dxSkinsCore,
-  dxSkinBasic,
-  dxSkinBlack,
-  dxSkinBlue,
-  dxSkinBlueprint,
-  dxSkinCaramel,
-  dxSkinCoffee,
-  dxSkinDarkroom,
-  dxSkinDarkSide,
-  dxSkinDevExpressDarkStyle,
-  dxSkinDevExpressStyle,
-  dxSkinFoggy,
-  dxSkinGlassOceans,
-  dxSkinHighContrast,
-  dxSkiniMaginary,
-  dxSkinLilian,
-  dxSkinLiquidSky,
-  dxSkinLondonLiquidSky,
-  dxSkinMcSkin,
-  dxSkinMetropolis,
-  dxSkinMetropolisDark,
-  dxSkinMoneyTwins,
-  dxSkinOffice2007Black,
-  dxSkinOffice2007Blue,
-  dxSkinOffice2007Green,
-  dxSkinOffice2007Pink,
-  dxSkinOffice2007Silver,
-  dxSkinOffice2010Black,
-  dxSkinOffice2010Blue,
-  dxSkinOffice2010Silver,
-  dxSkinOffice2013DarkGray,
-  dxSkinOffice2013LightGray,
-  dxSkinOffice2013White,
-  dxSkinOffice2016Colorful,
-  dxSkinOffice2016Dark,
-  dxSkinOffice2019Black,
-  dxSkinOffice2019Colorful,
-  dxSkinOffice2019DarkGray,
-  dxSkinOffice2019White,
-  dxSkinPumpkin,
-  dxSkinSeven,
-  dxSkinSevenClassic,
-  dxSkinSharp,
-  dxSkinSharpPlus,
-  dxSkinSilver,
-  dxSkinSpringtime,
-  dxSkinStardust,
-  dxSkinSummer2008,
-  dxSkinTheAsphaltWorld,
-  dxSkinTheBezier,
-  dxSkinValentine,
-  dxSkinVisualStudio2013Blue,
-  dxSkinVisualStudio2013Dark,
-  dxSkinVisualStudio2013Light,
-  dxSkinVS2010,
-  dxSkinWhiteprint,
-  dxSkinWXI,
-  dxSkinXmas2008Blue,
-  dxCore,
-  cxClasses,
-  cxLookAndFeels,
-  dxSkinsForm;
+  uModelForm;
+
 
 type
   TMenuMain = class(TModelForm)
@@ -113,14 +119,17 @@ type
     acRecordClient: TAction;
     acAbout: TAction;
     acConfig: TAction;
-    dxSkinController1: TdxSkinController;
     procedure FormShow(Sender: TObject);
     procedure acAboutExecute(Sender: TObject);
     procedure acConfigExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure acRecordProductExecute(Sender: TObject);
     procedure acRecordClientExecute(Sender: TObject);
+    procedure acOrderExecute(Sender: TObject);
   private
+    {$IFDEF DEVEXPRESS}
+      FDevExpressSkin: TdxSkinController;
+    {$ENDIF}
     FMenu: TForm;
   public
     procedure Clean;
@@ -158,6 +167,12 @@ begin
     Self.Menu(TMenuConfig, MenuConfig);
 end;
 
+procedure TMenuMain.acOrderExecute(Sender: TObject);
+begin
+  inherited;
+  Self.Menu(TRoutineOrder, RoutineOrder);
+end;
+
 procedure TMenuMain.acRecordClientExecute(Sender: TObject);
 begin
   inherited;
@@ -180,6 +195,17 @@ end;
 procedure TMenuMain.FormCreate(Sender: TObject);
 begin
   inherited;
+  {
+  object dxSkin: TdxSkinController
+    Left = 16
+    Top = 184
+  end
+  }
+
+  // DevExpress Skin
+  {$IFDEF DEVEXPRESS}
+    FDevExpressSkin := TdxSkinController.Create(Application);
+  {$ENDIF}
 
   // Title
   Self.Caption := Application.Title;

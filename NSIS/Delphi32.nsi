@@ -12,8 +12,8 @@
 !include "x64.nsh"
 
 ; # - Geral
-Name "Quick Order 0.0.1 x32"
-OutFile "..\Output\QuickOrder_0.0.1_Win32.exe"
+Name "Quick Order 0.0.27 x32"
+OutFile "..\Output\QuickOrder_0.0.27_Win32.exe"
 Unicode True
 InstallDir "$LOCALAPPDATA\QuickOrder"
 InstallDirRegKey HKCU "SOFTWARE\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" ""
@@ -60,15 +60,15 @@ Function .onInit
 FunctionEnd
 
 ; # - Version
-VIProductVersion "0.0.14.0"
+VIProductVersion "0.0.274.0"
 VIAddVersionKey "ProductName" "Quick Order x32"
 VIAddVersionKey "Comments" ""
 VIAddVersionKey "CompanyName" "Isaac Caires / zrfisaac.github.io"
 VIAddVersionKey "LegalTrademarks" "Isaac Caires / zrfisaac.github.io"
 VIAddVersionKey "LegalCopyright" "Isaac Caires / zrfisaac.github.io"
 VIAddVersionKey "FileDescription" "A lightweight MVP designed to showcase a streamlined client order management system."
-VIAddVersionKey "FileVersion" "0.0.1.0"
-VIAddVersionKey "ProductVersion" "0.0.1.0"
+VIAddVersionKey "FileVersion" "0.0.27.0"
+VIAddVersionKey "ProductVersion" "0.0.27.0"
 
 ; # - Translation
 LangString MUI_Shortcut ${LANG_ENGLISH} "Create shortcut on the desktop"
@@ -90,7 +90,7 @@ Section Base
 	CreateShortcut "$SMPROGRAMS\Quick Order.lnk" "$INSTDIR\QuickOrder.exe" "" "$INSTDIR\QuickOrder.ico"
 
 	; # : - Control Panel
-	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "DisplayName" "Quick Order 5.2.0.2 x32"
+	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "DisplayName" "Quick Order 0.0.27.0 x32"
 	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "UninstallString" "$\"$INSTDIR\Uninstall.exe$\""
 	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "QuietUninstallString" "$\"$INSTDIR\Uninstall.exe$\" /S"
 	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "InstallLocation" "$\"$INSTDIR$\""
@@ -98,12 +98,12 @@ Section Base
 	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "Publisher" "Isaac Caires / zrfisaac.github.io"
 	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "URLInfoAbout" "https://zrfisaac.github.io"
 	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "HelpLink" "https://zrfisaac.github.io"
-	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "DisplayVersion" "0.0.1.0"
+	WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "DisplayVersion" "0.0.27.0"
 	WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "VersionMajor" 0
 	WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "VersionMinor" 0
 	WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "NoModify" 1
 	WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "NoRepair" 0
-	WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "EstimatedSize" 46227 ;KB
+	WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C1B437F6-3B3E-4460-9F4F-4978A961D713}" "EstimatedSize" 6471 ;KB
 SectionEnd
 
 ; # - Uninstaller - Base

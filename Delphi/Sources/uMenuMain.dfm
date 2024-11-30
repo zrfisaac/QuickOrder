@@ -67,6 +67,7 @@ inherited MenuMain: TMenuMain
       Category = 'miMain'
       Caption = 'Order'
       ShortCut = 116
+      OnExecute = acOrderExecute
     end
     object acRecordProduct: TAction
       Category = 'miRecord'
@@ -90,9 +91,5 @@ inherited MenuMain: TMenuMain
       ShortCut = 113
       OnExecute = acConfigExecute
     end
-  end
-  object dxSkinController1: TdxSkinController
-    Left = 96
-    Top = 64
   end
 end

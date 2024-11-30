@@ -23,10 +23,19 @@ uses
   Vcl.ComCtrls,
   Vcl.StdCtrls,
   Vcl.ExtCtrls,
-  uModelRoutine;
+  uModelRoutine, Vcl.Mask, Vcl.DBCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids;
 
 type
   TRoutineOrder = class(TModelRoutine)
+    tsMain: TTabSheet;
+    pnMain: TPanel;
+    pnEditName: TPanel;
+    lbEditName: TLabel;
+    DBGrid1: TDBGrid;
+    DBLookupComboBox1: TDBLookupComboBox;
+    Panel1: TPanel;
+    Label1: TLabel;
+    DBLookupComboBox2: TDBLookupComboBox;
   end;
 
 var
