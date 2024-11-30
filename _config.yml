@@ -9,4 +9,4 @@ show_downloads: true
 #  zip_url: http://example.com/download.zip
 #  another_url: another value
 mermaid:
-  src: 'path/to/mermaid.js'
+  src: 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.js'

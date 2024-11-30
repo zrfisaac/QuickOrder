@@ -60,7 +60,7 @@ Function .onInit
 FunctionEnd
 
 ; # - Version
-VIProductVersion "0.0.1.2"
+VIProductVersion "0.0.14.0"
 VIAddVersionKey "ProductName" "Quick Order x32"
 VIAddVersionKey "Comments" ""
 VIAddVersionKey "CompanyName" "Isaac Caires / zrfisaac.github.io"
