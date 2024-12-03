@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{45314628-B14E-4B17-B4CC-A8BECBBBD59E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="QuickOrder.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="QuickOrderTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="QuickOrder">
+        <MSBuild Projects="QuickOrder.dproj"/>
+    </Target>
+    <Target Name="QuickOrder:Clean">
+        <MSBuild Projects="QuickOrder.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QuickOrder:Make">
+        <MSBuild Projects="QuickOrder.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QuickOrderTest">
+        <MSBuild Projects="QuickOrderTest.dproj"/>
+    </Target>
+    <Target Name="QuickOrderTest:Clean">
+        <MSBuild Projects="QuickOrderTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QuickOrderTest:Make">
+        <MSBuild Projects="QuickOrderTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="QuickOrder;QuickOrderTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="QuickOrder:Clean;QuickOrderTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="QuickOrder:Make;QuickOrderTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
