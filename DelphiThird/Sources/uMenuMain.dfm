@@ -11,20 +11,21 @@ object MenuMain: TMenuMain
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnCreate = dxFluentDesignFormCreate
+  OnShow = dxFluentDesignFormShow
   NavigationControl = dxNavBar
   TextHeight = 15
   object dxNavBar: TdxNavBar
     Left = 0
     Top = 0
     Width = 210
-    Height = 480
+    Height = 460
     Align = alLeft
     ActiveGroupIndex = 0
     TabOrder = 0
     View = 21
     OptionsBehavior.Common.AllowExpandAnimation = True
     OptionsView.HamburgerMenu.NavigationPaneMode = npmNone
-    ExplicitLeft = -6
     object dxNavBarClient: TdxNavBarGroup
       Caption = 'Client'
       SelectedLinkIndex = -1
@@ -81,21 +82,20 @@ object MenuMain: TMenuMain
       Links = <>
     end
   end
-  object dxLayoutControl: TdxLayoutControl
+  object pnBack: TdxPanel
     Left = 210
     Top = 0
     Width = 450
-    Height = 480
+    Height = 460
     Align = alClient
     TabOrder = 1
-    LayoutLookAndFeel = dxLayoutSkinLookAndFeel1
-    object dxLayoutControlGroup_Root: TdxLayoutGroup
-      AlignHorz = ahLeft
-      AlignVert = avTop
-      Hidden = True
-      ShowBorder = False
-      Index = -1
-    end
+  end
+  object sbStatus: TdxStatusBar
+    Left = 0
+    Top = 460
+    Width = 660
+    Height = 20
+    Panels = <>
   end
   object dxSkinController: TdxSkinController
     NativeStyle = False

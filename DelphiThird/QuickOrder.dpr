@@ -11,7 +11,8 @@ uses
   uMenuProduct in 'Sources\uMenuProduct.pas' {MenuProduct},
   uMenuReport in 'Sources\uMenuReport.pas' {MenuReport},
   uUnitConfig in 'Sources\uUnitConfig.pas',
-  uUnitHelp in 'Sources\uUnitHelp.pas';
+  uUnitHelp in 'Sources\uUnitHelp.pas',
+  uMenuAbout in 'Sources\uMenuAbout.pas' {MenuAbout};
 
 {$R *.res}
 
@@ -19,12 +20,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TMenuMain, MenuMain);
-  Application.CreateForm(TDataMain, DataMain);
-  Application.CreateForm(TModelForm, ModelForm);
-  Application.CreateForm(TMenuConfig, MenuConfig);
-  Application.CreateForm(TMenuClient, MenuClient);
-  Application.CreateForm(TMenuOrder, MenuOrder);
-  Application.CreateForm(TMenuProduct, MenuProduct);
-  Application.CreateForm(TMenuReport, MenuReport);
   Application.Run;
 end.

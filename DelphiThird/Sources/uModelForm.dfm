@@ -11,17 +11,40 @@ object ModelForm: TModelForm
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object pnBack: TPanel
+  object pnBack: TdxPanel
     Left = 0
     Top = 0
     Width = 624
     Height = 441
     Align = alClient
-    BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = 224
-    ExplicitTop = 192
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    object pnTitle: TdxPanel
+      Left = 0
+      Top = 0
+      Width = 622
+      Height = 41
+      Align = alTop
+      TabOrder = 0
+      object imTitle: TImage
+        Left = 0
+        Top = 0
+        Width = 41
+        Height = 39
+        Align = alLeft
+      end
+      object lbTitle: TcxLabel
+        Left = 41
+        Top = 0
+        Align = alClient
+        BiDiMode = bdLeftToRight
+        Caption = 'lbTitle'
+        ParentBiDiMode = False
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        TabOrder = 0
+        AnchorX = 331
+        AnchorY = 20
+      end
+    end
   end
 end

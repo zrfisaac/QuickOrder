@@ -17,4 +17,10 @@ object DataMain: TDataMain
     Left = 48
     Top = 120
   end
+  object fdQuery: TFDQuery
+    Connection = fdConnection
+    Transaction = fdTransaction
+    Left = 48
+    Top = 176
+  end
 end
