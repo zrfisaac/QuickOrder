@@ -2,92 +2,42 @@
 [![](https://img.shields.io/badge/english--4169E1?style=for-the-badge)](README.en.md)
 [![](https://img.shields.io/badge/-português-F9C22B?style=for-the-badge)](README.pt.md)
 ---
-[![](https://img.shields.io/badge/version-0.0.10-007EC6?style=flat-square)](#)
+[![](https://img.shields.io/badge/version-1.0.0-007EC6?style=flat-square)](#)
 [![](https://img.shields.io/badge/android-apk-6DAF00?style=flat-square)](#)
 [![](https://img.shields.io/badge/windows-exe-6DAF00?style=flat-square)](#)
 
 # <img src="favicon.png" alt="Logo" width="32" height="32"> Nome do Projeto
 
-**Descrição Breve:** Um resumo conciso de uma linha sobre o que este projeto faz ou visa alcançar.
+**QuickOrder** é um MVP leve projetado para demonstrar um sistema simplificado de gerenciamento de pedidos de clientes. Ele facilita a gestão de clientes, pedidos, itens de pedidos e produtos. O QuickOrder é ideal para pequenas empresas ou desenvolvedores que buscam um sistema simples e eficiente para demonstrar funcionalidades relacionadas a pedidos.
 
 ## Funcionalidades
+- **Gerenciamento de Clientes**: Adicionar, editar e remover clientes do sistema.
+- **Gerenciamento de Pedidos**: Criar, atualizar e acompanhar os pedidos dos clientes.
+- **Catálogo de Produtos**: Gerenciar informações e estoque de produtos.
+- **Itens de Pedidos**: Vincular produtos aos pedidos com quantidade e detalhes de preços.
 
-- **Funcionalidade Principal 1**: Descrição breve da funcionalidade principal.
-- **Funcionalidade Principal 2**: Destaque para outra funcionalidade essencial.
-- **Plataforma Cruzada**: Especifique se a aplicação é destinada a desktop, mobile ou web.
+## Dependências
+Este projeto utiliza as seguintes ferramentas e bibliotecas:
 
-## Arquitetura
+- **[SQL Server Express](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)**: Uma versão leve do SQL Server para gerenciamento de banco de dados.
+- **[Delphi Community Edition](https://www.embarcadero.com/br/products/delphi/starter/free-download)**: Um IDE para desenvolvimento rápido de aplicativos.
+- **[DevExpress](https://www.devexpress.com/)**: Uma biblioteca de componentes de interface e ferramentas.
+- **[FastReport](https://www.fast-report.com/pt/)**: Uma solução para criação e gerenciamento de relatórios.
+- **[Fugue Icons 3.5.6](https://p.yusukekamiyamane.com/)**: Uma coleção de ícones de alta qualidade criada por Yusuke Kamiyamane.
 
-Este projeto segue uma arquitetura modular e escalável.
+## Próximas Versões
+O QuickOrder está em desenvolvimento e servirá como uma demonstração de sistemas de gerenciamento de pedidos simples e eficientes.
 
-```mermaid
-graph TD
-    A[Frontend] --> B[Backend API]
-    B --> C[Database]
-    A --> D[Authentication Service]
-    B --> E[Third-Party Integrations]
-```
+## Início Rápido
+As instruções de instalação e configuração estarão disponíveis no lançamento.
 
-### Stack Tecnológica
-
-- **Frontend**: (ex.: Flutter, Delphi VCL/FMX)
-- **Backend**: (ex.: ASP.NET, Delphi RESTful Services)
-- **Banco de Dados**: Especifique o banco de dados utilizado (ex.: SQL Server, Firebase, Firebird).
-
-## Instalação
-
-### Pré-requisitos
-
-- Ferramentas de desenvolvimento instaladas:
-  - Para C#: Visual Studio
-  - Para Delphi: IDE Delphi (Community/Professional)
-  - Para Flutter: SDK Flutter
-- Outras dependências (se houver).
-
-## Uso
-
-1. Inicie a aplicação:
-   - Para desktop: Execute o arquivo executável a partir do diretório de build.
-   - Para mobile: Implemente no emulador ou dispositivo físico.
-   - Para web: Acesse via navegador se o serviço de hospedagem estiver configurado.
-2. Acesse as principais funcionalidades conforme descrito na seção de Funcionalidades.
-
-## Roteiro
-
-- **Fase 1**: Implementar as funcionalidades principais (MVP).
-- **Fase 2**: Adicionar funcionalidades avançadas e melhorar o design da interface.
-- **Fase 3**: Otimizar o desempenho e escalabilidade.
-
-## Contribuindo
-
-Contribuições são bem-vindas! Siga os seguintes passos para contribuir:
-
+## Contribuições
+Contribuições são bem-vindas! Para contribuir:
 1. Faça um fork do repositório.
-2. Crie uma branch para a nova funcionalidade.
-3. Commit suas alterações e faça push para o seu fork.
-4. Abra um pull request.
-
-## Agradecimentos
-
-- **Ícones**:  
-  - [Font Awesome](https://fontawesome.com) - Para ícones usados no projeto.
-  - [Feather Icons](https://feathericons.com) - Para ícones minimalistas e personalizáveis.
-- **Bibliotecas**:  
-  - [Newtonsoft.Json](https://www.newtonsoft.com/json) - Framework popular de JSON para .NET.
-  - [Flutter SDK](https://flutter.dev) - Para construir aplicações móveis e web multiplataforma.
-- **Assets**:  
-  - [Unsplash](https://unsplash.com) - Para imagens de alta resolução gratuitas usadas no projeto.
-  - [Pexels](https://www.pexels.com) - Para fotos gratuitas de banco de imagens.
-- **Fontes**:  
-  - [Google Fonts](https://fonts.google.com) - Para fontes de código aberto e de boa qualidade.
+2. Crie uma nova branch (`git checkout -b feature/sua-funcionalidade`).
+3. Faça o commit das suas alterações (`git commit -m 'Adicione sua funcionalidade'`).
+4. Faça o push para a branch (`git push origin feature/sua-funcionalidade`).
+5. Abra um pull request.
 
 ## Licença
-
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo [`LICENSE`](LICENSE) para mais detalhes.
-
-## Autor
-
-Desenvolvido por **[Isaac Caires](https://zrfisaac.github.io)**
-- 🌐 **[Portfólio](https://zrfisaac.github.io)**
-- 📱 **WhatsApp:** [+55 (71) 9 8398-0801](https://wa.me/message/HIUVCFWYE3EXG1)  
-- 📧 **E-mail:** [zrfisaac@gmail.com](mailto:zrfisaac@gmail.com)  
+[Licença MIT](LICENSE)
