@@ -2,9 +2,9 @@
 [![](https://img.shields.io/badge/english--4169E1?style=for-the-badge)](README.en.md)
 [![](https://img.shields.io/badge/-português-F9C22B?style=for-the-badge)](README.pt.md)
 ---
-[![](https://img.shields.io/badge/version-1.0.0-007EC6?style=flat-square)](#)
-[![](https://img.shields.io/badge/android-apk-6DAF00?style=flat-square)](#)
-[![](https://img.shields.io/badge/windows-exe-6DAF00?style=flat-square)](#)
+[![](https://img.shields.io/badge/version-1.0.0-007EC6?style=flat-square)](https://github.com/zrfisaac/QuickOrder/archive/refs/tags/v1.0.0.zip)
+[![](https://img.shields.io/badge/Installer-Win32-6DAF00?style=flat-square)](https://github.com/zrfisaac/QuickOrder/releases/download/v1.0.0/QuickOrder_1.0.0_Win32.exe)
+[![](https://img.shields.io/badge/Installer-Win64-6DAF00?style=flat-square)](https://github.com/zrfisaac/QuickOrder/releases/download/v1.0.0/QuickOrder_1.0.0_Win64.exe)
 
 # <img src="favicon.png" alt="Logo" width="32" height="32"> Nome do Projeto
 
