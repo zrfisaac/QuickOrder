@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zrfisaac/template.readme)
+[![](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zrfisaac/QuickOrder)
 [![](https://img.shields.io/badge/-english-4169E1?style=for-the-badge)](README.en.md)
 [![](https://img.shields.io/badge/português--f9c22b?style=for-the-badge)](README.pt.md)
 ---
